@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  puppet-server:
+    build: .
+    container_name: puppet-server
+    hostname: puppet-server
+    ports:
+      - "8140:8140"
+    volumes:
+      - puppet-code:/etc/puppetlabs/code
+      - puppet-ssl:/etc/puppetlabs/puppet/ssl
+      - puppet-serverdata:/opt/puppetlabs/server/data/puppetserver
+    networks:
+      - puppet-network
+    restart: unless-stopped
+
+volumes:
+  puppet-code:
+  puppet-ssl:
+  puppet-serverdata:
+
+networks:
+  puppet-network:
+    driver: bridge

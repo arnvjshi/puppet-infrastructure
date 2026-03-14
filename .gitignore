@@ -1,0 +1,36 @@
+# ── OS & editor artifacts ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ── Docker generated / override files ────────────────────────────────────────
+docker-compose.override.yml
+.env
+
+# ── Puppet generated & cache files ───────────────────────────────────────────
+# Agent SSL certs/keys (never commit private keys)
+ssl/
+*.pem
+*.key
+*.crt
+*.csr
+
+# Puppet module downloads (install via `puppet module install` instead)
+modules/
+
+# Puppet run reports and cached facts
+.resource_status.json
+.last_run_summary.yaml
+.last_run_report.yaml
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── PowerShell ────────────────────────────────────────────────────────────────
+# Chocolatey local install cache
+chocolatey/
